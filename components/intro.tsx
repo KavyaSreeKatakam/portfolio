@@ -7,6 +7,7 @@ import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import Image from "next/image";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
@@ -18,8 +19,33 @@ export default function Intro() {
       id="home"
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
+      <div className="flex items-center justify-center">
+        <div className="relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              type: "tween",
+              duration: 0.2,
+            }}
+          >
+            <img
+              src="/avatar.png"
+              alt="avatar"
+              width="200"
+              height="200"
+              className="h-44 w-44 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+            />
+          </motion.div>
+
+        </div>
+      </div>
+
+
+
+      
       <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="mb-10 mt-10 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
@@ -56,7 +82,7 @@ export default function Intro() {
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full 
           outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack 
           dark:bg-white/10 dark:hover:bg-white/30"
-          href="/CV.pdf"
+          href="/KavyaSreeKatakam-Resume.pdf"
           download
         >
           Download CV{" "}

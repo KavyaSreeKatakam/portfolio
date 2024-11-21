@@ -23,10 +23,12 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       <body
        
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 bg-[url('/white.png')] bg-cover bg-center bg-fixed bg-no-repeat dark:bg-none`}
-        style={{ backgroundSize: '120%' }} 
-      
+       className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
+       
       >
+
+        <div className="bg-[#f7cace] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]">
+        </div>
        
         <ThemeContextProvider>
           <ActiveSectionContextProvider>

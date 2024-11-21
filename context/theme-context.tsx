@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import React, { useEffect, useState, createContext, useContext } from "react";
 
 type Theme = "light" | "dark";
@@ -18,7 +17,8 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<Theme>("light");
+   const [theme, setTheme] = useState<Theme>("dark"); 
+  const [isThemeLoaded, setIsThemeLoaded] = useState(false);
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -40,17 +40,28 @@ export default function ThemeContextProvider({
 
       if (localTheme === "dark") {
         document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
       }
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme("dark");
       document.documentElement.classList.add("dark");
+    } else {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
     }
+
+    setIsThemeLoaded(true); 
   }, []);
+
+  if (!isThemeLoaded) {
+    return null; 
+  }
 
   return (
     <ThemeContext.Provider
       value={{
-        theme,
+        theme: theme as Theme,
         toggleTheme,
       }}
     >

@@ -19,8 +19,9 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-      As a Computer Science graduate, I have had the privilege of working with esteemed organizations like Oracle, University at Albany - SUNY, 
-      and the New York State Department of Health. My ultimate goal is to design and develop fully-fledged applications, 
+      As a Computer Science graduate, I have had the privilege of working with esteemed organizations like 
+      <span className="font-bold"> Oracle, University at Albany - SUNY, New York State Department of Health</span>. 
+      My ultimate goal is to design and develop fully-fledged applications, 
       managing everything from the initial design to deployment. 
       To achieve this, I am actively gaining experience by working 
       on both the front-end and back-end, as well as exploring design aspects using tools like Figma. 
